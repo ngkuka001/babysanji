@@ -15,12 +15,6 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/keen-slider@6.6.8/keen-slider.min.css"
     />
-    <!-- <style>
-      @font-face {
-        font-family: 'GothamBlack';
-        src: url('/assets/fonts/Gotham-Black.otf');
-      }
-    </style> -->
     <style type="text/tailwindcss">
       @layer components {
         .title-section {
@@ -30,7 +24,7 @@
           @apply flex-1 rounded-2xl bg-white relative p-4 skew-y-6 pb-10 max-w-[300px];
         }
         .feature-card > img {
-          @apply absolute left-1/2 -skew-y-6 w-9/12 -translate-x-1/2;
+          @apply absolute left-1/2 -skew-y-6 w-full -translate-x-1/2;
         }
         .feature-card > div {
           @apply -skew-y-6;
@@ -64,69 +58,6 @@
         }
       }
     </style>
-    <style>
-      .collapsible {
-        background-color: #777;
-        color: white;
-        cursor: pointer;
-        padding: 18px;
-        width: 100%;
-        border: none;
-        text-align: left;
-        outline: none;
-        font-size: 15px;
-      }
-
-      .active,
-      .collapsible:hover {
-        background-color: #555;
-        color: #8384df;
-      }
-      .active + .content {
-        padding: 24px 18px;
-      }
-
-      .collapsible:after {
-        content: '\002B';
-        color: white;
-        font-weight: bold;
-        float: right;
-        margin-left: 5px;
-      }
-
-      .active:after {
-        content: '\2212';
-      }
-
-      .content {
-        padding: 0 18px;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.2s ease-out;
-        background-color: #ffd5fa;
-      }
-      .content a {
-        color: #145aa8;
-      }
-
-      /* Test */
-      [class^='number-slide'],
-      [class*=' number-slide'] {
-        background: grey;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 50px;
-        color: #fff;
-        font-weight: 500;
-        /* height: 300px; */
-        /* max-height: 100vh; */
-      }
-      .keen-slider__slide {
-        min-width: 272px;
-        height: auto;
-      }
-    </style>
     <script>
       tailwind.config = {
         theme: {
@@ -149,6 +80,9 @@
         },
       };
     </script>
+    <link rel="stylesheet" href="/assets/styles/detail.css" type="text/css" />
+    <link rel="stylesheet" href="/assets/styles/roadmap.css" type="text/css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
   </head>
   <body class="min-h-screen bg-main text-black overflow-hidden">
     <div
@@ -1012,6 +946,458 @@
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <!-- Chart -->
+      <section class="container mx-auto px-4 max-w-screen-xl mb-28">
+        <div class="font-bold text-4xl mb-4 text-center">
+          What make pewpew different
+        </div>
+        <div class="flex">
+          <div class="flex-1">
+            <canvas id="myChart"></canvas>
+            <div class="ova-details-v3 ml-36 mt-8">
+              <div class="details-wrapper column2">
+                <div class="item elementor-repeater-item-4e6cbf1">
+                  <h2 class="title">0.88%</h2>
+                  <p class="description">PinkSale Fee</p>
+                </div>
+                <div class="item elementor-repeater-item-3bfcb03">
+                  <h2 class="title">7.6%</h2>
+                  <p class="description">Team &amp; Marketing</p>
+                </div>
+                <div class="item elementor-repeater-item-4e70567">
+                  <h2 class="title">23.52%</h2>
+                  <p class="description">Liquidity</p>
+                </div>
+                <div class="item elementor-repeater-item-7cf9e81">
+                  <h2 class="title">24%</h2>
+                  <p class="description">Privatesale</p>
+                </div>
+                <div class="item elementor-repeater-item-7bc1c29">
+                  <h2 class="title">44%</h2>
+                  <p class="description">Presale</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex-1 flex flex-col text-center">
+            <div class="mb-10">
+              <div class="font-bold mb-2 text-xl">Privatesale & Presale</div>
+              <div>
+                Privatesale Hardcap : 200BNB <br>
+                Presale Softcap : 200BNB <br>
+                Presale Hardcap : 400BNB
+              </div>
+            </div>
+            <div class="mb-10">
+              <div class="font-bold mb-2 text-xl">Rates</div>
+              <div>
+                Total Supply 10.000.000.000 BitV <br>
+                Private Sale / 1BNB = 12.000.000(2BNB = 24.000.000 BitV) <br>
+                Presale / 1BNB = 11.000.000 BitV <br>
+                Listing / 1BNB = 10.000.000 BitV <br>
+                Listing Price 1BP = 0.00000009991 BNB
+              </div>
+            </div>
+            <div class="mb-10">
+              <div class="font-bold mb-2 text-xl">Tax</div>
+              <div>
+                BitV Buy/Sell Tax 10% <br>
+                3% Rewards in BUSD <br>
+                1% Liquidity <br>
+                3% Marketing <br>
+                3% Team & Development
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <script>
+          var xValues = [
+            'Privatesale',
+            'Presale',
+            'Liquidity',
+            'Pinksale Fee',
+            'Team & Marketing ',
+          ];
+          var yValues = [55, 49, 44, 24, 15];
+          var barColors = ['#FC3352', '#3D88FB', '#5637C8', '#00D89E', '#9116CD'];
+    
+          new Chart('myChart', {
+            type: 'doughnut',
+            data: {
+              labels: xValues,
+              datasets: [
+                {
+                  backgroundColor: barColors,
+                  data: yValues,
+                },
+              ],
+            },
+            options: {
+              title: {
+                display: false,
+              },
+              plugins: {
+                legend: false,
+                tooltip: false,
+              },
+            },
+          });
+        </script>
+      </section>
+
+      <!-- Roadmap -->
+
+      <section class="container mx-auto px-4 max-w-screen-xl mb-28">
+        <div class="font-bold text-4xl mb-4 text-center">
+          Roadmap
+        </div>
+        <div class="ova-road-map-advanced">
+          <!-- Desktop -->
+          <div class="road-map-advanced">
+            <div class="timeline-row timeline-row-odd">
+              <div class="timeline-item timeline-done">
+                <div class="timeline-date">
+                  <h2 class="date">April 2021</h2>
+                </div>
+                <div class="timeline-icon">
+                  <div class="icon">
+                    <i class="fas fa-check"></i>
+                  </div>
+                </div>
+                <div
+                  class="timeline-content ova-invisible"
+                  data-animation='{"animation":"ova-move-up","duration":"slow","delay":""}'
+                >
+                  <h2 class="title">Q2 2021</h2>
+                  <ul class="content">
+                    <li class="text">Birth of BitValley idea</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-date">
+                  <h2 class="date">May 2021</h2>
+                </div>
+                <div class="timeline-icon">
+                  <div class="icon">
+                    <i class="fas fa-check"></i>
+                  </div>
+                </div>
+                <div
+                  class="timeline-content ova-invisible"
+                  data-animation='{"animation":"ova-move-up","duration":"slow","delay":100}'
+                >
+                  <h2 class="title">Q2 2021</h2>
+                  <ul class="content">
+                    <li class="text">Team Assemble</li>
+                    <li class="text"></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-date">
+                  <h2 class="date">June 2021</h2>
+                </div>
+                <div class="timeline-icon">
+                  <div class="icon">
+                    <i class="fas fa-check"></i>
+                  </div>
+                </div>
+                <div
+                  class="timeline-content ova-invisible"
+                  data-animation='{"animation":"ova-move-up","duration":"slow","delay":200}'
+                >
+                  <h2 class="title">Q2 2021</h2>
+                  <ul class="content">
+                    <li class="text">Brainstorming</li>
+                    <li class="text">Forming the whole concept</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="timeline-row timeline-row-even">
+              <div class="timeline-item">
+                <div class="timeline-date">
+                  <h2 class="date">August 2021</h2>
+                </div>
+                <div class="timeline-icon">
+                  <div class="icon">
+                    <i class="fas fa-check"></i>
+                  </div>
+                </div>
+                <div
+                  class="timeline-content ova-invisible"
+                  data-animation='{"animation":"ova-move-up","duration":"slow","delay":100}'
+                >
+                  <h2 class="title">Q3 2021</h2>
+                  <ul class="content">
+                    <li class="text">Starting to develop the</li>
+                    <li class="text">Smart Contract</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="timeline-item -even">
+                <div class="timeline-date">
+                  <h2 class="date">July 2021</h2>
+                </div>
+                <div class="timeline-icon">
+                  <div class="icon">
+                    <i class="fas fa-check"></i>
+                  </div>
+                </div>
+                <div
+                  class="timeline-content ova-invisible"
+                  data-animation='{"animation":"ova-move-up","duration":"slow","delay":""}'
+                >
+                  <h2 class="title">Q3 2021</h2>
+                  <ul class="content">
+                    <li class="text">Starting to develop our first Product</li>
+                    <li class="text"></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="timeline-row timeline-row-odd">
+              <div class="timeline-item -odd">
+                <div class="timeline-date">
+                  <h2 class="date">September 2021</h2>
+                </div>
+                <div class="timeline-icon">
+                  <div class="icon">
+                    <i class="fas fa-check"></i>
+                  </div>
+                </div>
+                <div
+                  class="timeline-content ova-invisible"
+                  data-animation='{"animation":"ova-move-up","duration":"slow","delay":""}'
+                >
+                  <h2 class="title">Q3 2021</h2>
+                  <ul class="content">
+                    <li class="text">Brainstorming for future updates</li>
+                    <li class="text">Testing our Smart Contract</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-date">
+                  <h2 class="date">October 2021</h2>
+                </div>
+                <div class="timeline-icon">
+                  <div class="icon">
+                    <i class="fas fa-check"></i>
+                  </div>
+                </div>
+                <div
+                  class="timeline-content ova-invisible"
+                  data-animation='{"animation":"ova-move-up","duration":"slow","delay":100}'
+                >
+                  <h2 class="title">Q4 2021</h2>
+                  <ul class="content">
+                    <li class="text">Writing the whitepaper</li>
+                    <li class="text">Design the website</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-date">
+                  <h2 class="date">November 2021</h2>
+                </div>
+                <div class="timeline-icon">
+                  <div class="icon">
+                    <i class="fas fa-check"></i>
+                  </div>
+                </div>
+                <div
+                  class="timeline-content ova-invisible"
+                  data-animation='{"animation":"ova-move-up","duration":"slow","delay":200}'
+                >
+                  <h2 class="title">Q4 2021</h2>
+                  <ul class="content">
+                    <li class="text">Starting to get the word out</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Desktop -->
+          <!-- Mobile -->
+          <div class="road-map-advanced-mobile">
+            <div class="timeline-items -mb">
+              <div class="timeline-icon">
+                <div class="icon">
+                  <i class="fas fa-check"></i>
+                </div>
+              </div>
+              <div class="timeline-info">
+                <div class="timeline-date">
+                  <h2 class="date">April 2021</h2>
+                </div>
+                <div class="timeline-content">
+                  <h2 class="title">Q2 2021</h2>
+                  <ul class="content">
+                    <li class="text">Birth of BitValley idea</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="timeline-items -mb">
+              <div class="timeline-icon">
+                <div class="icon">
+                  <i class="fas fa-check"></i>
+                </div>
+              </div>
+              <div class="timeline-info">
+                <div class="timeline-date">
+                  <h2 class="date">May 2021</h2>
+                </div>
+                <div class="timeline-content">
+                  <h2 class="title">Q2 2021</h2>
+                  <ul class="content">
+                    <li class="text">Team Assemble</li>
+                    <li class="text"></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="timeline-items -mb">
+              <div class="timeline-icon">
+                <div class="icon">
+                  <i class="fas fa-check"></i>
+                </div>
+              </div>
+              <div class="timeline-info">
+                <div class="timeline-date">
+                  <h2 class="date">June 2021</h2>
+                </div>
+                <div class="timeline-content">
+                  <h2 class="title">Q2 2021</h2>
+                  <ul class="content">
+                    <li class="text">Brainstorming</li>
+                    <li class="text">Forming the whole concept</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="timeline-items -mb">
+              <div class="timeline-icon">
+                <div class="icon">
+                  <i class="fas fa-check"></i>
+                </div>
+              </div>
+              <div class="timeline-info">
+                <div class="timeline-date">
+                  <h2 class="date">July 2021</h2>
+                </div>
+                <div class="timeline-content">
+                  <h2 class="title">Q3 2021</h2>
+                  <ul class="content">
+                    <li class="text">Starting to develop our first Product</li>
+                    <li class="text"></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="timeline-items -mb">
+              <div class="timeline-icon">
+                <div class="icon">
+                  <i class="fas fa-check"></i>
+                </div>
+              </div>
+              <div class="timeline-info">
+                <div class="timeline-date">
+                  <h2 class="date">August 2021</h2>
+                </div>
+                <div class="timeline-content">
+                  <h2 class="title">Q3 2021</h2>
+                  <ul class="content">
+                    <li class="text">Starting to develop the</li>
+                    <li class="text">Smart Contract</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="timeline-items -mb">
+              <div class="timeline-icon">
+                <div class="icon">
+                  <i class="fas fa-check"></i>
+                </div>
+              </div>
+              <div class="timeline-info">
+                <div class="timeline-date">
+                  <h2 class="date">September 2021</h2>
+                </div>
+                <div class="timeline-content">
+                  <h2 class="title">Q3 2021</h2>
+                  <ul class="content">
+                    <li class="text">Brainstorming for future updates</li>
+                    <li class="text">Testing our Smart Contract</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="timeline-items -mb">
+              <div class="timeline-icon">
+                <div class="icon">
+                  <i class="fas fa-check"></i>
+                </div>
+              </div>
+              <div class="timeline-info">
+                <div class="timeline-date">
+                  <h2 class="date">October 2021</h2>
+                </div>
+                <div class="timeline-content">
+                  <h2 class="title">Q4 2021</h2>
+                  <ul class="content">
+                    <li class="text">Writing the whitepaper</li>
+                    <li class="text">Design the website</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="timeline-items -mb">
+              <div class="timeline-icon">
+                <div class="icon">
+                  <i class="fas fa-check"></i>
+                </div>
+              </div>
+              <div class="timeline-info">
+                <div class="timeline-date">
+                  <h2 class="date">November 2021</h2>
+                </div>
+                <div class="timeline-content">
+                  <h2 class="title">Q4 2021</h2>
+                  <ul class="content">
+                    <li class="text">Starting to get the word out</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="timeline-items -mb">
+              <div class="timeline-icon">
+                <div class="icon">
+                  <i class="fas fa-check"></i>
+                </div>
+              </div>
+              <div class="timeline-info">
+                <div class="timeline-date">
+                  <h2 class="date">December 2021</h2>
+                </div>
+                <div class="timeline-content">
+                  <h2 class="title">Q4 2021</h2>
+                  <ul class="content">
+                    <li class="text">Private Sale</li>
+                    <li class="text">Audit of the smart contract</li>
+                    <li class="text">Start developing Multiple products</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Mobile -->
         </div>
       </section>
 
