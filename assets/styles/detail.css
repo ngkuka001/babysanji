@@ -192,9 +192,23 @@
   height: 100%;
   top: 0;
   left: 0;
-  background-color: #00d89e;
+  background-color: #143f6b;
   border-radius: 7px;
 }
+
+.ova-details-v3 .details-wrapper .item-1:before {
+  background-color: #143f6b;
+}
+.ova-details-v3 .details-wrapper .item-2:before {
+  background-color: #f55353;
+}
+.ova-details-v3 .details-wrapper .item-3:before {
+  background-color: #feb139;
+}
+.ova-details-v3 .details-wrapper .item-4:before {
+  background-color: #f6f54d;
+}
+
 .ova-details-v3 .details-wrapper .item .title {
   margin: 0;
   font-weight: 500;
