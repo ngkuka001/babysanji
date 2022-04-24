@@ -121,11 +121,11 @@
 .ova-details-v3 .details-wrapper.column2 {
   grid-template-columns: 1fr 1fr;
 }
-@media screen and (max-width: 500px) {
+/* @media screen and (max-width: 500px) {
   .ova-details-v3 .details-wrapper.column2 {
     grid-template-columns: 1fr;
   }
-}
+} */
 .ova-details-v3 .details-wrapper.column3 {
   grid-template-columns: 1fr 1fr 1fr;
 }
