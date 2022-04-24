@@ -66,23 +66,24 @@
         theme: {
           extend: {
             colors: {
-              primaryColor: "#8384DF",
-              main: "#fffef6",
-              primary: "#feed4c",
-              primaryDark: "#ffc212",
-              second: "#ff9965",
-              secondDark: "#E57A44",
+              primaryColor: '#8384DF',
+              main: '#fffef6',
+              primary: '#feed4c',
+              primaryDark: '#ffc212',
+              second: '#ff9965',
+              secondDark: '#E57A44',
             },
             backgroundImage: {
-              "footer-banner": "url('/assets/images/footer-banner.jpg')",
+              'footer-banner': "url('/assets/images/footer-banner.jpg')",
             },
             fontFamily: {
-              gothamBlack: ["GothamBlack", "sans-serif"],
+              gothamBlack: ['GothamBlack', 'sans-serif'],
             },
           },
         },
       };
     </script>
+    <link rel="stylesheet" href="/assets/styles/styles.css" type="text/css" />
     <link rel="stylesheet" href="/assets/styles/detail.css" type="text/css" />
     <link rel="stylesheet" href="/assets/styles/roadmap.css" type="text/css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
@@ -93,7 +94,7 @@
       class="h-screen w-full bg-main z-50 flex items-center justify-center"
     >
       <img
-        class="w-36 animate__animated animate__flip animate__infinite preloader"
+        class="w-36 animate__animated animate__bounce animate__infinite preloader"
         src="/assets/images/Logo3.png"
         alt="Preloader"
       />
@@ -160,14 +161,11 @@
                   <li class="nav-item">
                     <a class="page-scroll" href="#team">Team</a>
                   </li>
-                  <li class="nav-item">
+                  <!-- <li class="nav-item">
                     <a class="page-scroll" href="#partner">Partner</a>
-                  </li>
+                  </li> -->
                   <li class="nav-item">
-                    <a
-                      class="page-scroll"
-                      target="_blank"
-                      href="/assets/Whitepaper-Sanji-inu.pdf"
+                    <a class="page-scroll" target="_blank" href=""
                       >Whitepaper</a
                     >
                   </li>
@@ -198,7 +196,7 @@
 
     <div>
       <section
-        class="container mx-auto px-4 max-w-screen-xl flex flex-col md:flex-row mt-10"
+        class="container mx-auto px-4 max-w-screen-xl flex flex-col md:flex-row pt-32"
         id="home"
       >
         <div
@@ -206,7 +204,7 @@
         >
           <div class="font-bold text-5xl mb-8">BABY SANJI</div>
           <div class="flex items-center gap-4 mb-16">
-            <img class="w-20" src="/assets/images/Logo3.png" alt="" />
+            <img class="w-24" src="/assets/images/Logo3.png" alt="" />
             <div>
               Baby Sanji-inu is a community meme token. Baby Sanji-inu was
               created with the aim of creating a new opportunity for those who
@@ -313,7 +311,10 @@
         </div>
       </section>
 
-      <section id="testimoni" class="container mx-auto px-4 max-w-screen-xl">
+      <section
+        id="testimoni"
+        class="container mx-auto px-4 max-w-screen-xl pt-32"
+      >
         <div
           class="bg-gradient-to-b from-primary to-primaryDark p-4 py-8 rounded-2xl"
         >
@@ -353,7 +354,7 @@
             <div class="flex-1">
               <div class="flex gap-4 items-center pl-10 border-l">
                 <img
-                  class="flex-1 w-16 h-fit"
+                  class="flex-1 w-24 h-fit"
                   src="/assets/images/(5).png"
                   alt=""
                 />
@@ -370,7 +371,7 @@
         </div>
       </section>
 
-      <section id="feature" class="container mx-auto px-4 max-w-screen-xl">
+      <section id="about" class="container mx-auto px-4 max-w-screen-xl pt-32">
         <div class="flex gap-10 mb-40 item">
           <div class="flex-1 flex flex-col gap-4">
             <div class="font-bold text-4xl">Featured Cute Baby Sanji</div>
@@ -673,7 +674,7 @@
         </div>
       </section>
 
-      <section id="about" class="container mx-auto px-4 max-w-screen-xl">
+      <section class="container mx-auto px-4 max-w-screen-xl pt-32">
         <!-- <div class="text-center w-full title-section mb-6">Who are Sanji?</div> -->
         <div class="flex flex-col md:flex-row gap-10">
           <div class="flex flex-col flex-1">
@@ -707,7 +708,7 @@
         </div>
       </section>
 
-      <section class="container mx-auto px-4 max-w-screen-xl mb-28">
+      <section class="container mx-auto px-4 max-w-screen-xl pt-32">
         <div class="flex gap-4">
           <div class="flex flex-col gap-4 flex-1">
             <img class="w-2/3" src="/assets/images/(7).png" alt="" />
@@ -957,7 +958,10 @@
       </section>
 
       <!-- Chart -->
-      <section class="container mx-auto px-4 max-w-screen-xl mb-28">
+      <section
+        id="tokenomics"
+        class="container mx-auto px-4 max-w-screen-xl pt-32"
+      >
         <div class="font-bold text-4xl mb-4 text-center">Tokenomics</div>
         <div class="flex">
           <div class="flex-1">
@@ -989,12 +993,12 @@
         </div>
 
         <script>
-          var xValues = ["Presale", "Liquidity", "Unicrypt Fee", "Burnt"];
+          var xValues = ['Presale', 'Liquidity', 'Unicrypt Fee', 'Burnt'];
           var yValues = [65.7, 32.77, 1.44, 0.09];
-          var barColors = ["#143F6B", "#F55353", "#FEB139", "#F6F54D"];
+          var barColors = ['#143F6B', '#F55353', '#FEB139', '#F6F54D'];
 
-          new Chart("myChart", {
-            type: "doughnut",
+          new Chart('myChart', {
+            type: 'doughnut',
             data: {
               labels: xValues,
               datasets: [
@@ -1019,7 +1023,10 @@
 
       <!-- Roadmap -->
 
-      <section class="container mx-auto px-4 max-w-screen-xl mb-28">
+      <section
+        id="roadmap"
+        class="container mx-auto px-4 max-w-screen-xl pt-32"
+      >
         <div class="font-bold text-4xl mb-4 text-center">Roadmap</div>
         <div class="ova-road-map-advanced">
           <!-- Desktop -->
@@ -1119,7 +1126,7 @@
                   data-animation='{"animation":"ova-move-up","duration":"slow","delay":200}'
                 >
                   <ul class="content">
-                    <li class="text">Listed on Pancakeswap</li>
+                    <li class="text">Reach more than 2,000+ HOLDER</li>
                     <li class="text">Listing on CoinMarketCap</li>
                     <li class="text">Listing on Coingecko</li>
                     <li class="text">Reach more than 5,000+ HOLDER</li>
@@ -1311,7 +1318,7 @@
                 </div>
                 <div class="timeline-content">
                   <ul class="content">
-                    <li class="text">Listed on Pancakeswap</li>
+                    <li class="text">Reach more than 2,000+ HOLDER</li>
                     <li class="text">Listing on CoinMarketCap</li>
                     <li class="text">Listing on Coingecko</li>
                     <li class="text">Reach more than 5,000+ HOLDER</li>
@@ -1441,19 +1448,23 @@
         </div>
       </section>
 
-      <section class="container mx-auto px-4 max-w-screen-xl mb-28">
+      <section id="team" class="container mx-auto px-4 max-w-screen-xl pt-32">
         <div class="font-bold text-4xl mb-4 text-center">Our Team</div>
         <div class="flex justify-around">
           <div
             class="text-center w-max group hover:bg-white hover:shadow-2xl p-4 rounded-lg"
           >
             <div
-              class="border-2 rounded-full w-44 h-44 flex justify-center items-center group-hover:border-primaryDark mx-auto"
+              class="border-2 rounded-full w-48 h-48 flex justify-center items-center group-hover:border-primaryDark mx-auto"
             >
               <div
-                class="w-40 h-40 p-8 bg-gradient-to-b from-primary to-primaryDark rounded-full flex items-center justify-center"
+                class="w-44 h-44 p-4 bg-gradient-to-b from-primary to-primaryDark rounded-full flex items-center justify-center"
               >
-                <img class="w-40" src="/assets/images/(1).png" alt="" />
+                <img
+                  class="w-40"
+                  src="/assets/images/baby/bb1-min.png"
+                  alt=""
+                />
               </div>
             </div>
             <div class="group-hover:text-primaryDark font-bold">James</div>
@@ -1463,12 +1474,16 @@
             class="text-center w-max group hover:bg-white hover:shadow-2xl p-4 rounded-lg"
           >
             <div
-              class="border-2 rounded-full w-44 h-44 flex justify-center items-center group-hover:border-primaryDark mx-auto"
+              class="border-2 rounded-full w-48 h-48 flex justify-center items-center group-hover:border-primaryDark mx-auto"
             >
               <div
-                class="w-40 h-40 p-8 bg-gradient-to-b from-primary to-primaryDark rounded-full flex items-center justify-center"
+                class="w-44 h-44 p-4 bg-gradient-to-b from-primary to-primaryDark rounded-full flex items-center justify-center"
               >
-                <img class="w-40" src="/assets/images/(1).png" alt="" />
+                <img
+                  class="w-40"
+                  src="/assets/images/baby/bb2-min.png"
+                  alt=""
+                />
               </div>
             </div>
             <div class="group-hover:text-primaryDark font-bold">Juro Saito</div>
@@ -1478,30 +1493,38 @@
             class="text-center w-max group hover:bg-white hover:shadow-2xl p-4 rounded-lg"
           >
             <div
-              class="border-2 rounded-full w-44 h-44 flex justify-center items-center group-hover:border-primaryDark mx-auto"
+              class="border-2 rounded-full w-48 h-48 flex justify-center items-center group-hover:border-primaryDark mx-auto"
             >
               <div
-                class="w-40 h-40 p-8 bg-gradient-to-b from-primary to-primaryDark rounded-full flex items-center justify-center"
+                class="w-44 h-44 p-4 bg-gradient-to-b from-primary to-primaryDark rounded-full flex items-center justify-center"
               >
-                <img class="w-40" src="/assets/images/(1).png" alt="" />
+                <img
+                  class="w-40"
+                  src="/assets/images/baby/bb3-min.png"
+                  alt=""
+                />
               </div>
             </div>
-            <div class="group-hover:text-primaryDark font-bold">DragonX</div>
+            <div class="group-hover:text-primaryDark font-bold">Luke</div>
             <div>Community Manager</div>
           </div>
           <div
             class="text-center w-max group hover:bg-white hover:shadow-2xl p-4 rounded-lg"
           >
             <div
-              class="border-2 rounded-full w-44 h-44 flex justify-center items-center group-hover:border-primaryDark mx-auto"
+              class="border-2 rounded-full w-48 h-48 flex justify-center items-center group-hover:border-primaryDark mx-auto"
             >
               <div
-                class="w-40 h-40 p-8 bg-gradient-to-b from-primary to-primaryDark rounded-full flex items-center justify-center"
+                class="w-44 h-44 p-4 bg-gradient-to-b from-primary to-primaryDark rounded-full flex items-center justify-center"
               >
-                <img class="w-40" src="/assets/images/(1).png" alt="" />
+                <img
+                  class="w-40"
+                  src="/assets/images/baby/bb4-min.png"
+                  alt=""
+                />
               </div>
             </div>
-            <div class="group-hover:text-primaryDark font-bold">Luke</div>
+            <div class="group-hover:text-primaryDark font-bold">Sarah</div>
             <div>
               Social Media Manager <br />
               & Marketing
@@ -1511,21 +1534,25 @@
             class="text-center w-max group hover:bg-white hover:shadow-2xl p-4 rounded-lg"
           >
             <div
-              class="border-2 rounded-full w-44 h-44 flex justify-center items-center group-hover:border-primaryDark mx-auto"
+              class="border-2 rounded-full w-48 h-48 flex justify-center items-center group-hover:border-primaryDark mx-auto"
             >
               <div
-                class="w-40 h-40 p-8 bg-gradient-to-b from-primary to-primaryDark rounded-full flex items-center justify-center"
+                class="w-44 h-44 p-4 bg-gradient-to-b from-primary to-primaryDark rounded-full flex items-center justify-center"
               >
-                <img class="w-40" src="/assets/images/(1).png" alt="" />
+                <img
+                  class="w-40"
+                  src="/assets/images/baby/bb5-min.png"
+                  alt=""
+                />
               </div>
             </div>
-            <div class="group-hover:text-primaryDark font-bold">Comt216</div>
+            <div class="group-hover:text-primaryDark font-bold">Alice</div>
             <div>Designer</div>
           </div>
         </div>
       </section>
 
-      <section class="container mx-auto px-4 max-w-screen-xl mb-28">
+      <section class="container mx-auto px-4 max-w-screen-xl pt-32">
         <div
           class="bg-gradient-to-b from-second to-secondDark rounded-2xl p-8 relative"
         >
@@ -1559,7 +1586,7 @@
       </section>
     </div>
 
-    <footer class="bg-[#fff9c6] border-t">
+    <footer class="bg-[#fff9c6] border-t mt-32">
       <div
         class="flex justify-between items-center container mx-auto px-4 max-w-screen-xl py-4"
       >
@@ -1652,10 +1679,10 @@
     <script src="assets/js/babysanji.js"></script>
     <script>
       function toggleMenu() {
-        const menu = document.getElementById("navbarOne");
-        menu.classList.toggle("hidden");
-        menu.classList.toggle("-right-[100vw]");
-        menu.classList.toggle("right-0");
+        const menu = document.getElementById('navbarOne');
+        menu.classList.toggle('hidden');
+        menu.classList.toggle('-right-[100vw]');
+        menu.classList.toggle('right-0');
       }
     </script>
   </body>
