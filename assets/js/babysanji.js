@@ -1,18 +1,31 @@
 setTimeout(() => {
   const preloader = document.getElementById('preload-section');
   preloader.classList.add('hidden');
-  preloader.classList.remove('flex');
+  // preloader.classList.remove('flex');
   document.getElementsByTagName('body')[0].classList.remove('overflow-hidden');
 }, 1500);
 
 window.onload = () => {
   const refs = [
-    ...document.querySelectorAll(`[class*="animate__"]:not(.preloader)`),
+    ...document.querySelectorAll(
+      `[class*="animate__"]:not(.preloader):not(.not-effect)`
+    ),
   ];
   const handleFade = (windowOffset) => {
     refs.forEach((ele) => {
       const eleOffset = ele.offsetTop;
       if (windowOffset > eleOffset - screen.height) {
+        if (ele.classList.contains('baby__right')) {
+          ele.classList.add('animate__fadeInRightBig');
+          ele.classList.remove('animate__fadeOut');
+          return;
+        }
+        if (ele.classList.contains('baby__left')) {
+          ele.classList.add('animate__fadeInLeftBig');
+          ele.classList.remove('animate__fadeOut');
+          return;
+        }
+
         ele.classList.add('animate__fadeInUp');
         ele.classList.remove('animate__fadeOut');
       }
