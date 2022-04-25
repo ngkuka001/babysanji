@@ -1,8 +1,7 @@
 setTimeout(() => {
   const preloader = document.getElementById('preload-section');
   preloader.classList.add('hidden');
-  // preloader.classList.remove('flex');
-  document.getElementsByTagName('body')[0].classList.remove('overflow-hidden');
+  document.querySelector('.layout-wrapper').classList.remove('hidden');
 }, 1500);
 
 window.onload = () => {
@@ -47,6 +46,7 @@ window.onload = () => {
 
   // img-feature position
   const tokenImgs = document.querySelectorAll('.img-feature');
+  console.log({ tokenImgs });
   const handlePositionToken = () => {
     tokenImgs.forEach((img) => {
       const nextDiv = img.nextElementSibling;
@@ -56,7 +56,9 @@ window.onload = () => {
       nextDiv.style.paddingTop = thisHeight / 2 + 'px';
     });
   };
-  handlePositionToken();
+  setTimeout(() => {
+    handlePositionToken();
+  }, 1550);
 
   window.addEventListener('resize', handlePositionToken);
 };
