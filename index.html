@@ -66,18 +66,18 @@
         theme: {
           extend: {
             colors: {
-              primaryColor: '#8384DF',
-              main: '#fffef6',
-              primary: '#feed4c',
-              primaryDark: '#ffc212',
-              second: '#ff9965',
-              secondDark: '#E57A44',
+              primaryColor: "#8384DF",
+              main: "#fffef6",
+              primary: "#feed4c",
+              primaryDark: "#ffc212",
+              second: "#ff9965",
+              secondDark: "#E57A44",
             },
             backgroundImage: {
-              'footer-banner': "url('/assets/images/footer-banner.jpg')",
+              "footer-banner": "url('/assets/images/footer-banner.jpg')",
             },
             fontFamily: {
-              gothamBlack: ['GothamBlack', 'sans-serif'],
+              gothamBlack: ["GothamBlack", "sans-serif"],
             },
           },
         },
@@ -212,8 +212,9 @@
               </div>
             </div>
             <div class="flex items-center gap-8">
-              <button
-                class="border rounded-2xl px-4 py-2 bg-gradient-to-b from-primary to-primaryDark hover:drop-shadow-2xl flex items-center gap-2"
+              <a
+                href="https://t.me/babysanjiinucm"
+                class="border rounded-2xl px-4 py-2 bg-gradient-to-b from-primary to-primaryDark hover:drop-shadow-lg cursor-pointer flex items-center gap-2"
               >
                 JOIN THE COMMUNITY
 
@@ -278,7 +279,7 @@
                     </g>
                   </g>
                 </svg>
-              </button>
+              </a>
 
               <div class="flex gap-2 items-center">
                 <div
@@ -323,11 +324,12 @@
                   class="flex-1 flex flex-col items-center justify-between text-center mb-4 md:mb-0"
                 >
                   <div>Audited by Coinscope</div>
-                  <button
-                    class="rounded-2xl px-4 py-2 bg-gradient-to-b from-second to-secondDark hover:drop-shadow-2xl flex items-center gap-2 w-max"
+                  <a
+                    href="https://github.com/coinscope-co/audits/blob/main/babysanji/audit.pdf"
+                    class="rounded-2xl px-4 py-2 bg-gradient-to-b from-second to-secondDark hover:drop-shadow-lg cursor-pointer flex items-center gap-2 w-max"
                   >
                     View Audit
-                  </button>
+                  </a>
                 </div>
                 <div
                   class="flex-1 flex flex-col items-center justify-between text-center mb-4 md:mb-0"
@@ -343,11 +345,12 @@
                   class="flex-1 flex flex-col items-center justify-between text-center mb-4 md:mb-0"
                 >
                   <div>Contract created by the Baby Sanji</div>
-                  <button
-                    class="rounded-2xl px-4 py-2 bg-gradient-to-b from-second to-secondDark hover:drop-shadow-2xl flex items-center gap-2 w-max"
+                  <a
+                    href="https://bscscan.com/address/0x77381fcdc54e63848980b9810af5ad451d3b25fd#code"
+                    class="rounded-2xl px-4 py-2 bg-gradient-to-b from-second to-secondDark hover:drop-shadow-lg cursor-pointer flex items-center gap-2 w-max"
                   >
                     View Contract
-                  </button>
+                  </a>
                 </div>
               </div>
               <div class="flex-1 -order-1 md:order-none">
@@ -701,11 +704,12 @@
                 >
                   Join Telegram
                 </button>
-                <button
-                  class="border rounded-2xl px-4 py-2 bg-gradient-to-b from-primary to-primaryDark hover:drop-shadow-2xl flex items-center gap-2 w-full justify-center"
+                <a
+                  href="https://sweepwidget.com/view/55927-8bfgvj0s"
+                  class="border rounded-2xl px-4 py-2 bg-gradient-to-b from-primary to-primaryDark hover:drop-shadow-lg cursor-pointer flex items-center gap-2 w-full justify-center"
                 >
                   Join Whitelist
-                </button>
+                </a>
               </div>
             </div>
             <div class="flex-1">
@@ -1026,12 +1030,12 @@
           </div>
 
           <script>
-            var xValues = ['Presale', 'Liquidity', 'Unicrypt Fee', 'Burnt'];
+            var xValues = ["Presale", "Liquidity", "Unicrypt Fee", "Burnt"];
             var yValues = [65.7, 32.77, 1.44, 0.09];
-            var barColors = ['#143F6B', '#F55353', '#FEB139', '#F6F54D'];
+            var barColors = ["#143F6B", "#F55353", "#FEB139", "#F6F54D"];
 
-            new Chart('myChart', {
-              type: 'doughnut',
+            new Chart("myChart", {
+              type: "doughnut",
               data: {
                 labels: xValues,
                 datasets: [
@@ -1674,7 +1678,7 @@
                 ></path>
               </svg>
             </a>
-            <a href="https://twitter.com/sanjiinu_tw/" target="_blank">
+            <a href="https://twitter.com/BabySanjiinu_tw" target="_blank">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 x="0px"
@@ -1690,7 +1694,7 @@
                 ></path>
               </svg>
             </a>
-            <a href="https://t.me/sanjiinucommunity" target="_blank">
+            <a href="https://t.me/babysanjiinucm" target="_blank">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 x="0px"
@@ -1706,7 +1710,7 @@
                 ></path>
               </svg>
             </a>
-            <a href="https://www.instagram.com/sanjiinu_ig/" target="_blank">
+            <a href="" target="_blank">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 x="0px"
@@ -1730,10 +1734,10 @@
     <script src="assets/js/babysanji.js"></script>
     <script>
       function toggleMenu() {
-        const menu = document.getElementById('navbarOne');
-        menu.classList.toggle('hidden');
-        menu.classList.toggle('-right-[100vw]');
-        menu.classList.toggle('right-0');
+        const menu = document.getElementById("navbarOne");
+        menu.classList.toggle("hidden");
+        menu.classList.toggle("-right-[100vw]");
+        menu.classList.toggle("right-0");
       }
     </script>
   </body>
