@@ -11,9 +11,10 @@ window.onload = () => {
     ),
   ];
   const handleFade = (windowOffset) => {
+    console.log({ windowOffset });
     refs.forEach((ele) => {
       const eleOffset = ele.offsetTop;
-      if (windowOffset > eleOffset - screen.height) {
+      if (windowOffset > eleOffset - screen.height / 2 - 200) {
         if (ele.classList.contains('baby__right')) {
           ele.classList.add('animate__fadeInRightBig');
           ele.classList.remove('animate__fadeOut');
@@ -25,13 +26,16 @@ window.onload = () => {
           return;
         }
 
+        console.log('run here', { ele, eleOffset });
         ele.classList.add('animate__fadeInUp');
         ele.classList.remove('animate__fadeOut');
       }
     });
   };
   const initWindow = window.pageYOffset;
-  handleFade(initWindow);
+  setTimeout(() => {
+    handleFade(initWindow);
+  }, 1505);
 
   window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
@@ -46,7 +50,6 @@ window.onload = () => {
 
   // img-feature position
   const tokenImgs = document.querySelectorAll('.img-feature');
-  console.log({ tokenImgs });
   const handlePositionToken = () => {
     tokenImgs.forEach((img) => {
       const nextDiv = img.nextElementSibling;
